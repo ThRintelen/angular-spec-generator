@@ -42,7 +42,7 @@ export class FileHandler {
 
     if (!content) {
       deferred.reject(
-        "File type not in component, service, guard, resolver, directive or interceptor"
+        "File type not in component, service, guard, resolver, directive, pipe or interceptor"
       );
       return deferred.promise;
     }

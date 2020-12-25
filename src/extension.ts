@@ -10,9 +10,7 @@ export function activate(context: vscode.ExtensionContext) {
     (event) => {
       const fileHandler = new FileHandler();
 
-      // TODO Alle Testtypen generiren
-      // TODO Readme / Changelog aufbertein
-      // TODO Bei Github einstellen
+      // TODO Readme aufbertein
       // TODO Wenn mehrere Classen existieren?
       // TODO Tests<
 
