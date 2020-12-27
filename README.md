@@ -13,7 +13,7 @@ Generate spec (jest / jasmine) files for Angular elements:
 - pipe
 - interceptor
 
-![gif](images/extension.gif)
+<img src="https://raw.githubusercontent.com/ThRintelen/angular-spec-generator/main/images/extension.gif" alt="Examples" />
 
 ## Requirements
 

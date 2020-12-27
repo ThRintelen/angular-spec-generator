@@ -2,7 +2,7 @@
   "name": "angular-spec-generator",
   "displayName": "Angular spec generator",
   "description": "Generate angular jest spec files",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "ThorstenRintelen",
   "author": {
     "name": "Thorsten Rintelen"
@@ -23,6 +23,13 @@
   "categories": [
     "Snippets",
     "Other"
+  ],
+  "keywords": [
+    "angular",
+    "spec",
+    "jest",
+    "jasmine",
+    "test"
   ],
   "activationEvents": [
     "onCommand:angular-spec-generator.generateSpecFile"
