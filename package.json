@@ -3,10 +3,24 @@
   "displayName": "Angular spec generator",
   "description": "Generate angular jest spec files",
   "version": "0.0.1",
+  "author": {
+    "name": "Thorsten Rintelen"
+  },
+  "icon": "logo.png",
   "engines": {
     "vscode": "^1.52.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThRintelen/angular-spec-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ThRintelen/angular-spec-generator/issues",
+    "email": "thorsten.rintelen@traperto.com"
+  },
+  "homepage": "https://github.com/ThRintelen/angular-spec-generator/blob/main/README.md",
   "categories": [
+    "Snippets",
     "Other"
   ],
   "activationEvents": [
@@ -37,8 +51,7 @@
     "test-compile": "tsc -p ./",
     "test-watch": "tsc -watch -p ./",
     "pretest": "npm run test-compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "lint": "eslint src --ext ts"
   },
   "devDependencies": {
     "@types/filesystem": "0.0.29",

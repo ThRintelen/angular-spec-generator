@@ -1,18 +1,13 @@
-import Q = require("q");
 import * as vscode from "vscode";
 import { FileHandler } from "./file-handler";
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-  const test = vscode.commands.registerCommand(
+  const command = vscode.commands.registerCommand(
     "angular-spec-generator.generateSpecFile",
     (event) => {
       const fileHandler = new FileHandler();
-
-      // TODO Readme aufbertein
-      // TODO Wenn mehrere Classen existieren?
-      // TODO Tests<
 
       fileHandler
         .readFile(event.fsPath)
@@ -23,7 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
 
-  context.subscriptions.push(test);
+  context.subscriptions.push(command);
 }
 
 // this method is called when your extension is deactivated
