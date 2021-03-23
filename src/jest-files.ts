@@ -31,11 +31,11 @@ describe('${className}', () => {
     pipe = new ${className}();
   })
 
-  it('shoud ...', () => {
+  it('should ...', () => {
     expect(pipe).toBeTruthy();
   });
 
-  it.todo('shoud ...');
+  it.todo('should ...');
 });
 `;
   }
@@ -52,12 +52,12 @@ describe('${className}', () => {
       ]
   }));
 
-  it('shoud ...', () => {
+  it('should ...', () => {
     const interceptor: ${className} = TestBed.inject(${className});
     expect(interceptor).toBeTruthy();
   });
 
-  it.todo('shoud ...');
+  it.todo('should ...');
 });
 `;
   }
@@ -66,12 +66,12 @@ describe('${className}', () => {
     return `import { ${className} } from "./${file.name}";
 
 describe('${className}', () => {
-  it('shoud ...', () => {
+  it('should ...', () => {
     const directive = new ${className}();
     expect(directive).toBeTruthy();
   });
 
-  it.todo('shoud ...');
+  it.todo('should ...');
 });
 `;
   }
@@ -82,19 +82,19 @@ describe('${className}', () => {
 import { ${className} } from "./${file.name}";
 
 describe("${className}", () => {
-  let service: MyService;
+  let service: ${className};
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MyService);
+    service = TestBed.inject(${className});
   });
 
   describe('method1', () => {
-    it('shoud ...', () => {
+    it('should ...', () => {
       expect(service).toBeTruthy();
     });
 
-    it.todo('shoud ...');
+    it.todo('should ...');
   });
 });
 `;
@@ -128,15 +128,15 @@ describe("${className}", () => {
   });
 
   describe('method1', () => {
-    it('shoud ...', () => {
+    it('should ...', () => {
       expect(component).toBeTruthy();
     });
 
-    it.todo('shoud ...');
+    it.todo('should ...');
   });
 
   describe('method2', () => {
-    it('shoud ...', () => {
+    it('should ...', () => {
       expect(component).toBeTruthy();
     });
   });
