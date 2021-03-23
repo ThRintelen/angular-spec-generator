@@ -1,10 +1,10 @@
-# Angular spec (jest / jasmine) file generator
+# Angular spec (jest / jasmine / mockito) file generator
 
 ## Features
 
 Select an Angular *.ts file and use right click to generate the spec file.
 
-Generate spec (jest / jasmine) files for Angular elements:
+Generate spec ([jest](https://www.npmjs.com/package/jest) / [jasmine](https://www.npmjs.com/package/jasmine) / [mockito](https://www.npmjs.com/package/ts-mockito)) files for Angular elements:
 - component
 - service
 - guard
@@ -30,6 +30,4 @@ The files should be named like this
 
 ## Release Notes
 
-### 1.0.0
-
-Initial release
+[See changelog](./CHANGELOG.md)
