@@ -2,7 +2,7 @@
   "name": "angular-spec-generator",
   "displayName": "Angular spec generator",
   "description": "Generate angular jest spec files",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "publisher": "ThorstenRintelen",
   "author": {
     "name": "Thorsten Rintelen"
