@@ -2,7 +2,8 @@ import * as fs from "fs";
 import * as path from "path";
 import * as Q from "q";
 import { TextEditor, window, workspace } from "vscode";
-import { SpecFiles } from "./spec-files";
+import { JestFiles } from "./jest-files";
+import { MockitoFiles } from "./mockito-files";
 
 export class FileHandler {
   getClassName(document: string): Q.Promise<string> {
@@ -32,30 +33,22 @@ export class FileHandler {
     return deferred.promise;
   }
 
-  createFile(fileName: string, className: string): Q.Promise<string> {
-    const specFiles = new SpecFiles();
-    const deferred = Q.defer<string>();
+  createJestFile(fileName: string, className: string): Q.Promise<string> {
+    const specFiles = new JestFiles();
     const file = path.parse(fileName);
-    const specFile = `${file.name}.spec${file.ext}`;
-    const specFilePath = file.dir + "/" + specFile;
+    const specFilePath = `${file.dir}/${file.name}.spec${file.ext}`;
     const content = specFiles.createSpecFile(file, className);
 
-    if (!content) {
-      deferred.reject(
-        "File type not in component, service, guard, resolver, directive, pipe or interceptor"
-      );
-      return deferred.promise;
-    }
+    return this.handleFile(content, specFilePath);
+  }
 
-    fs.writeFile(specFilePath, content, (err) => {
-      if (err) {
-        deferred.reject(err.message);
-      }
-    });
+  createMockitoFile(fileName: string, className: string): Q.Promise<string> {
+    const specFiles = new MockitoFiles();
+    const file = path.parse(fileName);
+    const content = specFiles.createSpecFile(file, className);
+    const specFilePath = `${file.dir}/${file.name}.spec${file.ext}`;
 
-    deferred.resolve(specFilePath);
-
-    return deferred.promise;
+    return this.handleFile(content, specFilePath);
   }
 
   openFileInEditor(fileUrl: string): Q.Promise<TextEditor> {
@@ -72,6 +65,30 @@ export class FileHandler {
         deferred.resolve(editor);
       });
     });
+
+    return deferred.promise;
+  }
+
+  private handleFile(
+    content: string | null,
+    specFilePath: string
+  ): Q.Promise<string> {
+    const deferred = Q.defer<string>();
+
+    if (!content) {
+      deferred.reject(
+        "File type not in component, service, guard, resolver, directive, pipe or interceptor"
+      );
+      return deferred.promise;
+    }
+
+    fs.writeFile(specFilePath, content, (err) => {
+      if (err) {
+        deferred.reject(err.message);
+      }
+    });
+
+    deferred.resolve(specFilePath);
 
     return deferred.promise;
   }

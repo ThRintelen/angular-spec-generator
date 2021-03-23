@@ -1,6 +1,6 @@
 import { ParsedPath } from "path";
 
-export class SpecFiles {
+export class JestFiles {
   createSpecFile(file: ParsedPath, className: string): string | null {
     if (file.name.includes("component")) {
       return this.componentSpec(file, className);
@@ -31,9 +31,11 @@ describe('${className}', () => {
     pipe = new ${className}();
   })
 
-  it('create an instance', () => {
+  it('shoud ...', () => {
     expect(pipe).toBeTruthy();
   });
+
+  it.todo('shoud ...');
 });
 `;
   }
@@ -50,10 +52,12 @@ describe('${className}', () => {
       ]
   }));
 
-  it('should be created', () => {
+  it('shoud ...', () => {
     const interceptor: ${className} = TestBed.inject(${className});
     expect(interceptor).toBeTruthy();
   });
+
+  it.todo('shoud ...');
 });
 `;
   }
@@ -62,10 +66,12 @@ describe('${className}', () => {
     return `import { ${className} } from "./${file.name}";
 
 describe('${className}', () => {
-  it('should create an instance', () => {
+  it('shoud ...', () => {
     const directive = new ${className}();
     expect(directive).toBeTruthy();
   });
+
+  it.todo('shoud ...');
 });
 `;
   }
@@ -76,17 +82,19 @@ describe('${className}', () => {
 import { ${className} } from "./${file.name}";
 
 describe("${className}", () => {
-  let service: Test1Service;
+  let service: MyService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(Test1Service);
+    service = TestBed.inject(MyService);
   });
 
-  describe("method1", () => {
-    it("test 1", () => {
+  describe('method1', () => {
+    it('shoud ...', () => {
       expect(service).toBeTruthy();
     });
+
+    it.todo('shoud ...');
   });
 });
 `;
@@ -119,14 +127,16 @@ describe("${className}", () => {
     myService = TestBed.inject(MyService);
   });
 
-  describe("method1", () => {
-    it("test 1", () => {
+  describe('method1', () => {
+    it('shoud ...', () => {
       expect(component).toBeTruthy();
     });
+
+    it.todo('shoud ...');
   });
 
-  describe("method2", () => {
-    it("test 2", () => {
+  describe('method2', () => {
+    it('shoud ...', () => {
       expect(component).toBeTruthy();
     });
   });
