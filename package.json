@@ -2,7 +2,7 @@
   "name": "angular-spec-generator",
   "displayName": "Angular spec generator",
   "description": "Generate angular jest spec files",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "publisher": "ThorstenRintelen",
   "author": {
     "name": "Thorsten Rintelen"
@@ -48,7 +48,7 @@
       },
       {
         "command": "angular-spec-generator.generateEmptyFile",
-        "title": "Generate Eepty spec file"
+        "title": "Generate empty spec file"
       }
     ],
     "menus": {

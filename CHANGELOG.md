@@ -2,6 +2,10 @@
 
 All notable changes to the "angular-spec-generator" extension will be documented in this file.
 
+## v1.2.1
+
+- fix: typo
+  
 ## v1.2.0
 
 - feat: Support generating a empty spec file
