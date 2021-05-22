@@ -2,6 +2,7 @@ import * as fs from "fs";
 import * as path from "path";
 import * as Q from "q";
 import { TextEditor, window, workspace } from "vscode";
+import { EmptyFiles } from "./empty-files";
 import { JestFiles } from "./jest-files";
 import { MockitoFiles } from "./mockito-files";
 
@@ -44,6 +45,15 @@ export class FileHandler {
 
   createMockitoFile(fileName: string, className: string): Q.Promise<string> {
     const specFiles = new MockitoFiles();
+    const file = path.parse(fileName);
+    const content = specFiles.createSpecFile(file, className);
+    const specFilePath = `${file.dir}/${file.name}.spec${file.ext}`;
+
+    return this.handleFile(content, specFilePath);
+  }
+
+  createEmptyFile(fileName: string, className: string): Q.Promise<string> {
+    const specFiles = new EmptyFiles();
     const file = path.parse(fileName);
     const content = specFiles.createSpecFile(file, className);
     const specFilePath = `${file.dir}/${file.name}.spec${file.ext}`;

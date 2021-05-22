@@ -15,13 +15,9 @@ describe("ClassName", () => {
       const param = "myParam";
       when(serviceMock.getData(param)).thenReturn(of([]));
 
-      component.ngOnInit();
+      service.ngOnInit();
 
       verify(serviceMock.getData(param)).once();
     });
-  });
-
-  describe("Method 2", () => {
-    it("should ...").todo();
   });
 });

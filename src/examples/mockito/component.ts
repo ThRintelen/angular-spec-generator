@@ -21,8 +21,4 @@ describe("CancellationDeadlineHostComponent", () => {
       verify(serviceMock.getData(param)).once();
     });
   });
-
-  describe("Method 2", () => {
-    it.todo("should ...");
-  });
 });

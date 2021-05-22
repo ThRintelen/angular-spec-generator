@@ -1,6 +1,6 @@
 import { ParsedPath } from "path";
 
-export class MockitoFiles {
+export class EmptyFiles {
   createSpecFile(file: ParsedPath, className: string): string | null {
     if (file.name.includes("component")) {
       return this.componentSpec(file, className);
@@ -28,10 +28,6 @@ describe('${className}', () => {
   beforeEach(() => {
     pipe = new ${className}();
   })
-
-  it('create an instance', () => {
-    expect(pipe).toBeTruthy();
-  });
 });
 `;
   }
@@ -43,23 +39,6 @@ import { ${className} } from "./${file.name}";
 
 describe("${className}", () => {
   let service: ${className};
-
-  beforeEach(() => {
-    serviceMock = mock(MyService);
-
-    service = new ${className}(instance(serviceMock));
-  });
-
-  describe("Method 1", () => {
-    it("should ...", () => {
-      const param = "myParam";
-      when(serviceMock.getData(param)).thenReturn(of([]));
-
-      service.method();
-
-      verify(serviceMock.getData(param)).once();
-    });
-  });
 });`;
   }
 
@@ -70,24 +49,6 @@ import { ${className} } from "./${file.name}";
 
 describe("${className}", () => {
   let component: ${className};
-  let serviceMock: MyService;
-
-  beforeEach(() => {
-    serviceMock = mock(MyService);
-
-    component = new ${className}(instance(serviceMock));
-  });
-
-  describe("Method 1", () => {
-    it("should ...", () => {
-      const param = "myParam";
-      when(serviceMock.getData(param)).thenReturn(of([]));
-
-      component.ngOnInit();
-
-      verify(serviceMock.getData(param)).once();
-    });
-  });
 });`;
   }
 }

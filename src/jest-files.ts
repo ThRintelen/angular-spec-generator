@@ -134,12 +134,6 @@ describe("${className}", () => {
 
     it.todo('should ...');
   });
-
-  describe('method2', () => {
-    it('should ...', () => {
-      expect(component).toBeTruthy();
-    });
-  });
 })`;
   }
 }
