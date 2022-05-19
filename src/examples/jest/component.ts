@@ -28,7 +28,5 @@ describe("${className}", () => {
     it("shoud ...", () => {
       expect(component).toBeTruthy();
     });
-
-    it.todo("shoud ...");
   });
 });

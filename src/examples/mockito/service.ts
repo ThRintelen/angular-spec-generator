@@ -2,7 +2,7 @@ import { instance, mock, verify } from "ts-mockito";
 
 describe("ClassName", () => {
   let service: ClassName;
-  let matDialogMock: MatDialog;
+  let serviceMock: MyService;
 
   beforeEach(() => {
     serviceMock = mock(MyService);

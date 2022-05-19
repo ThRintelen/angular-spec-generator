@@ -10,6 +10,4 @@ describe("${className}", () => {
   it("shoud ...", () => {
     expect(pipe).toBeTruthy();
   });
-
-  it.todo("shoud ...");
 });
