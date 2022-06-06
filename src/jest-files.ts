@@ -4,11 +4,7 @@ export class JestFiles {
   createSpecFile(file: ParsedPath, className: string): string | null {
     if (file.name.includes("component")) {
       return this.componentSpec(file, className);
-    } else if (
-      file.name.includes("service") ||
-      file.name.includes("guard") ||
-      file.name.includes("resolver")
-    ) {
+    } else if (file.name.includes("service") || file.name.includes("guard") || file.name.includes("resolver")) {
       return this.serviceSpec(file, className);
     } else if (file.name.includes("directive")) {
       return this.directiveSpec(file, className);
@@ -34,15 +30,12 @@ describe('${className}', () => {
   it('should ...', () => {
     expect(pipe).toBeTruthy();
   });
-
-  it.todo('should ...');
 });
 `;
   }
 
   private interceptorSpec(file: ParsedPath, className: string): string {
     return `import { TestBed } from '@angular/core/testing';
-
     import { ${className} } from "./${file.name}";
 
 describe('${className}', () => {
@@ -56,8 +49,6 @@ describe('${className}', () => {
     const interceptor: ${className} = TestBed.inject(${className});
     expect(interceptor).toBeTruthy();
   });
-
-  it.todo('should ...');
 });
 `;
   }
@@ -70,15 +61,12 @@ describe('${className}', () => {
     const directive = new ${className}();
     expect(directive).toBeTruthy();
   });
-
-  it.todo('should ...');
 });
 `;
   }
 
   private serviceSpec(file: ParsedPath, className: string): string {
     return `import { TestBed } from '@angular/core/testing';
-
 import { ${className} } from "./${file.name}";
 
 describe("${className}", () => {
@@ -93,8 +81,6 @@ describe("${className}", () => {
     it('should ...', () => {
       expect(service).toBeTruthy();
     });
-
-    it.todo('should ...');
   });
 });
 `;
@@ -131,8 +117,6 @@ describe("${className}", () => {
     it('should ...', () => {
       expect(component).toBeTruthy();
     });
-
-    it.todo('should ...');
   });
 })`;
   }

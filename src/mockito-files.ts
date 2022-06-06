@@ -43,6 +43,7 @@ import { ${className} } from "./${file.name}";
 
 describe("${className}", () => {
   let service: ${className};
+  let serviceMock: MyService;
 
   beforeEach(() => {
     serviceMock = mock(MyService);

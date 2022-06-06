@@ -5,6 +5,4 @@ describe("${className}", () => {
     const directive = new ClassName();
     expect(directive).toBeTruthy();
   });
-
-  it.todo("shoud ...");
 });

@@ -2,6 +2,9 @@
 
 All notable changes to the "angular-spec-generator" extension will be documented in this file.
 
+## v1.3.0
+- update dependencied
+
 ## v1.2.1
 
 - fix: typo

@@ -13,7 +13,5 @@ describe("${className}", () => {
     it("shoud ...", () => {
       expect(service).toBeTruthy();
     });
-
-    it.todo("shoud ...");
   });
 });

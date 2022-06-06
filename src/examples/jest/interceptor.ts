@@ -12,6 +12,4 @@ describe("${className}", () => {
     const interceptor: ClassName = TestBed.inject(ClassName);
     expect(interceptor).toBeTruthy();
   });
-
-  it.todo("shoud ...");
 });
