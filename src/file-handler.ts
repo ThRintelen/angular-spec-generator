@@ -18,7 +18,7 @@ export class FileHandler {
     }
 
     if (!className) {
-      deferred.reject(`no class forund in selected file`);
+      deferred.reject(`no class found in selected file`);
     } else {
       deferred.resolve(className);
     }
