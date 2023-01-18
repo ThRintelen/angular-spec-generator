@@ -2,6 +2,10 @@
 
 All notable changes to the "angular-spec-generator" extension will be documented in this file.
 
+## v2.0.0
+- update dependencied
+- update angular 15
+
 ## v1.3.0
 - update dependencied
 
