@@ -2,9 +2,7 @@ import * as fs from "fs";
 import * as path from "path";
 import * as Q from "q";
 import { TextEditor, window, workspace } from "vscode";
-import { EmptyFiles } from "./empty-files";
 import { JestFiles } from "./jest-files";
-import { MockitoFiles } from "./mockito-files";
 
 export class FileHandler {
   getClassName(document: string): Q.Promise<string> {
@@ -43,24 +41,6 @@ export class FileHandler {
     return this.handleFile(content, specFilePath);
   }
 
-  createMockitoFile(fileName: string, className: string): Q.Promise<string> {
-    const specFiles = new MockitoFiles();
-    const file = path.parse(fileName);
-    const content = specFiles.createSpecFile(file, className);
-    const specFilePath = `${file.dir}/${file.name}.spec${file.ext}`;
-
-    return this.handleFile(content, specFilePath);
-  }
-
-  createEmptyFile(fileName: string, className: string): Q.Promise<string> {
-    const specFiles = new EmptyFiles();
-    const file = path.parse(fileName);
-    const content = specFiles.createSpecFile(file, className);
-    const specFilePath = `${file.dir}/${file.name}.spec${file.ext}`;
-
-    return this.handleFile(content, specFilePath);
-  }
-
   openFileInEditor(fileUrl: string): Q.Promise<TextEditor> {
     const deferred = Q.defer<TextEditor>();
 
@@ -79,16 +59,11 @@ export class FileHandler {
     return deferred.promise;
   }
 
-  private handleFile(
-    content: string | null,
-    specFilePath: string
-  ): Q.Promise<string> {
+  private handleFile(content: string | null, specFilePath: string): Q.Promise<string> {
     const deferred = Q.defer<string>();
 
     if (!content) {
-      deferred.reject(
-        "File type not in component, service, guard, resolver, directive, pipe or interceptor"
-      );
+      deferred.reject("File type not in component, service, guard, resolver, directive, pipe or interceptor");
       return deferred.promise;
     }
 

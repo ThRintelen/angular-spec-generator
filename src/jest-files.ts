@@ -108,7 +108,6 @@ describe("${className}", () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(${className});
     component = fixture.componentInstance;
-    fixture.detectChanges();
 
     myService = TestBed.inject(MyService);
   });
