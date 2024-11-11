@@ -3,15 +3,15 @@
 All notable changes to the "angular-spec-generator" extension will be documented in this file.
 
 ## v3.0.0
-- update dependencied
+- update dependencies
 - remove mockito and empty file support
 
 ## v2.0.0
-- update dependencied
+- update dependencies
 - update angular 15
 
 ## v1.3.0
-- update dependencied
+- update dependencies
 
 ## v1.2.1
 
